@@ -1,0 +1,76 @@
+﻿@model OVERAS.Models.customert
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2><b>Customer Registration Page</b></h2>
+
+<h4>customertb12</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="cid" class="control-label"></label>
+                <input asp-for="cid" class="form-control" />
+                <span asp-validation-for="cid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fname" class="control-label"></label>
+                <input asp-for="fname" class="form-control" />
+                <span asp-validation-for="fname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mname" class="control-label"></label>
+                <input asp-for="mname" class="form-control" />
+                <span asp-validation-for="mname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="lname" class="control-label"></label>
+                <input asp-for="lname" class="form-control" />
+                <span asp-validation-for="lname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="currentaddress" class="control-label"></label>
+                <input asp-for="currentaddress" class="form-control" />
+                
+                <span asp-validation-for="currentaddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ffname" class="control-label"></label>
+                <input asp-for="ffname" class="form-control" />
+                <span asp-validation-for="ffname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mmname" class="control-label"></label>
+                <input asp-for="mmname" class="form-control" />
+                <span asp-validation-for="mmname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="llname" class="control-label"></label>
+                <input asp-for="llname" class="form-control" />
+                <span asp-validation-for="llname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Register" class="btn btn-default" />
+            </div>
+
+        </form>
+        <b>Data Registered Successfully</b>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+
+

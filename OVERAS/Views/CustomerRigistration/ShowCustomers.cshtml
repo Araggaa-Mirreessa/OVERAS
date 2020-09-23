@@ -1,0 +1,73 @@
+﻿@model IEnumerable<OVERAS.Models.customert>
+
+@{
+    ViewData["Title"] = "ShowCustomers";
+}
+
+<h2>List Customers</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.fname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.mname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.lname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.currentaddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ffname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.mmname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.llname)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.fname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.currentaddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ffname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mmname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.llname)
+            </td>
+            <td>
+                <a asp-action="Add" asp-route-id="@item.cid">Edit</a> |
+                <a asp-action="Edit" asp-route-id="@item.cid">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.cid">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.cid">Delete</a>
+                <a asp-action="Update" asp-route-id="@item.cid">Edit</a> |
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
